@@ -1,0 +1,28 @@
+name: Export Folder Structure
+
+on:
+  workflow_dispatch: # allows you to run manually from GitHub UI
+  push:
+    branches:
+      - main   # optional, runs on every push to main
+
+jobs:
+  export-structure:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate folder structure
+        run: |
+          tree -L 6 \
+            --dirsfirst \
+            --noreport \
+            -I "node_modules|.git|.next|dist|coverage" \
+            > structure.txt
+
+      - name: Show folder structure
+        run: |
+          echo "===== Folder Structure ====="
+          cat structure.txt
