@@ -95,6 +95,10 @@ export async function deleteRecipeBySlugAndId(slugAndId: string) {
   const id = extractId(slugAndId);
   if (!id) return null;
 
-  await prisma.recipe.delete({ where: { id } });
+  const result = await prisma.recipe.deleteMany({ where: { id } });
+
+  if (result.count === 0) return null;
+
   return { success: true };
 }
+

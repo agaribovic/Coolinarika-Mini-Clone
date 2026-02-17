@@ -175,7 +175,7 @@ NEXT_PUBLIC_CDN_BASE_URL="http://localhost:3000/api/cdn"
 ## 3️⃣ Setup Database
 
 ```bash
-prisma generate
+npx prisma generate
 npx prisma db seed
 ```
 
