@@ -118,7 +118,7 @@ This mini clone showcases a professional, production-ready pattern commonly used
 
 - Fast page loads via server-side rendering (ISR)
 
-- Clean, shareable URLs (/recept/[slugAndId])
+- Clean, shareable URLs (/recepti/[slugAndId])
 
 - Hero images served via /api/cdn/\* with immutable caching headers
 
